@@ -23,7 +23,7 @@
   },
 ```
 
-11. Add a `.gitignore` and add the following lines
+11. Add a `.gitignore` to the root of your project and add the following lines to that file. pretty please, cherries and things.
 
 ```
 /node_modules
