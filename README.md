@@ -10,7 +10,7 @@
 7. Shut up and listen: also change your js file to
    `<script src="./app.bundle.js"></script>`
 8. `npm install jquery bootstrap babel-core babel-loader babel-preset-es2015 sass-loader node-sass webpack css-loader style-loader file-loader webpack-dev-server -D`
-9. Copy the webpack.config.js from slack or the repo into the root of our application. Pretty please.
+9. DownTOWN and Copy the webpack.config.js from slack or the repo into the root of our application. Pretty please.
 10. rename your script to app.bundle.js, pretty please!
 11. And your scripts in your package.json needs to have the following:
 
