@@ -25,7 +25,10 @@
 
 11. Add a `.gitignore` to the root of your project and add the following lines to that file. pretty please, cherries and things.
 
-```
+```js
 /node_modules
 /dist
 ```
+
+12. `npm install bootstrap-sass`
+13.
