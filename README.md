@@ -30,5 +30,41 @@
 /dist
 ```
 
-12. `npm install bootstrap-sass`
-13.
+12. in the terminal cmd -> `npm install bootstrap-sass`
+
+13. add a style.scss to your src folder with the following
+
+```
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+$holiday-background-color: #f07c05;
+$text-color: #faf7f7;
+
+body {
+  background: $holiday-background-color;
+  color: $text-color;
+}
+```
+
+14. Update our app.js file to import jQuery and our style.scss file. Sweet, and update our onload method to onReady
+
+```js
+$(document).ready(function() {
+  //same as window onload
+  console.log("Holiday Town Movies!!!");
+});
+```
+
+15. Let's add 3 boxes to our indexpage using bootstrap layout
+    Be sure to put them in a row, that lives in a container. Pretty please.
+
+```HTML
+<div class="col-md-4 col-sm-6">
+        <div class="box-bg">
+          <h3>Column 2</h3>
+          <p>Lorem ipsum dolor..</p>
+          <p>Ut enim ad..</p>
+        </div>
+      </div>
+```

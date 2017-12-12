@@ -1,0 +1,16 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+$holiday-background-color: #3c8d0d;
+$text-color: #080808;
+
+body {
+  background: $holiday-background-color;
+  color: $text-color;
+}
+
+.box-bg {
+  background-color: #ffffff;
+  width: 80%;
+  align-items: center;
+}
