@@ -68,3 +68,12 @@ $(document).ready(function() {
         </div>
       </div>
 ```
+
+16. Create a fetch request, wrapped in function. and handle the resolve or reject from the fetch call. Console.log out the payload in json so we know that it's working, or failing. :-(
+    `const movieURL = "https://api.themoviedb.org/3/search/movie?api_key=2434d246ec60c162a86db597467ef4ed&language=en-US&query=christmas&include_adult=false&sort_by=created_at.asc&page=1"`
+
+17. Now we want to loop over the results of each movie and create a div element, append an image element to it with the poster url, and finally append that create element to the class div 'movies' that is also our bootstrap row.
+
+18. Sweet!!! Images!!! but why are then off set ? :-( Here we want to leverage column resets [Bootstrap Docs](https://getbootstrap.com/docs/3.3/css/) by applying a column reset at responsive breakpoints, we get them to align correctly. Double Sweet.
+
+19. Ok. I think we've had it for the day.
