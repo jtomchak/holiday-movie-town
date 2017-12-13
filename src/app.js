@@ -1,4 +1,5 @@
 import "jquery";
+import "bootstrap-loader";
 import "./style.scss";
 
 // window.onload = function() {
@@ -14,7 +15,7 @@ $(document).ready(function() {
   //Get Moives HTTP request
   const getMovies = () => {
     const movieURL =
-      "https://api.themoviedb.org/3/search/movie?api_key=2434d246ec60c162a86db597467ef4ed&language=en-US&query=christmas&include_adult=false&sort_by=created_at.asc&page=1";
+      "https://api.themoviedb.org/3/search/movie?api_key=2434d246ec60c162a86db597467ef4ed&language=en-US&query=christmas&include_adult=false&sort_by=created_at&page=1";
 
     fetch(movieURL)
       .then(res => res.json())
@@ -26,6 +27,30 @@ $(document).ready(function() {
         createPosters();
       })
       .catch(err => console.log(err));
+  };
+  //Get Movie Details HTTP
+  const getMoviesDetails = movieId => {
+    const movieDetailsURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=2434d246ec60c162a86db597467ef4ed`;
+    fetch(movieDetailsURL)
+      .then(res => res.json())
+      .then(payload => {
+        console.log(payload);
+        //Present Modal!!!!
+        presentMovieDetailsModal(payload);
+      })
+      .catch(err => console.log(err));
+  };
+
+  //Present Modal for Movie!!!
+  const presentMovieDetailsModal = movie => {
+    $(".modal-title:first").text(movie.title);
+    $(".movieDetails-overview:first").text(movie.overview);
+    $(".movieDetails-img:first").attr(
+      "src",
+      "https://image.tmdb.org/t/p/w500/" + movie.poster_path
+    );
+    $(".movieDetails-tagline:first").text(movie.tagline);
+    $("#movieDetails-modal").modal();
   };
 
   const createPosters = () => {
@@ -53,19 +78,14 @@ $(document).ready(function() {
               .attr("class", "caption")
               .append($("<h2>").append(movie.title))
               .append(
-                $("<p>", {
-                  class: "",
-                  text: movie.overview
-                }).attr("class", "hidden-xs hidden-sm")
-              )
-              .append(
-                $("<p>").append(
-                  $("<a>")
-                    .attr("href", "http://www.imdb.com/title/") //to be modaled
-                    .attr("class", "btn btn-primary")
-                    .attr("role", "button")
-                    .text("Details")
-                )
+                $("<button>")
+                  .attr("class", "btn btn-info btn-md")
+                  .attr("type", "button")
+                  .text("Details")
+                  .click(function() {
+                    console.log(movie.title);
+                    getMoviesDetails(movie.id);
+                  })
               )
           );
         divCol.append(divThumbnail);

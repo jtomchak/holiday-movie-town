@@ -85,3 +85,49 @@ $(document).ready(function() {
 22. Adding in release data and description, and a call to action button for details
 
 23. We added col for xs, sm, and lg. This includes clearfix for 2 col layout aka sm/xs.
+
+24. # Modals!! `npm install -D bootstrap-loader html-webpack-plugin resolve-url-loader url-loader` Gonna need some things first!
+
+25. Update our index with a modal class attr. See Index below
+
+```html
+ <!--Modal in Action  -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal Content HERE -->
+        <div class="modal-content">
+          <!-- modal header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Movie Details!!!!</h4>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <p>Movies Details Here!!!!</p>
+          </div>
+          <!-- Modal FOOTER -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <!-- End of Modal Content -->
+      </div>
+    </div>
+```
+
+26. Now that you have a modal working. Rad. Good job. We want to fetch the data for each poster individually. Below is the APIURL you'll need to get the details of a specific movie
+
+```js
+//Note the Movie Id needs to be concated before you can fetch!!!!
+https://api.themoviedb.org/3/movie/<MOVIE-ID>?api_key=2434d246ec60c162a86db597467ef4ed
+```
+
+27. You can attach a click event directly on an element as it is created. Sadly you can't attach an event listener on an element before it's appended to the DOM.
+
+```js
+.click(function() {
+  console.log(movie.id);
+  //
+})
+```
