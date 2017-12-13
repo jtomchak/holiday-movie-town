@@ -33,7 +33,10 @@ $(document).ready(function() {
     const moviePosters = moviesList
       .filter(x => x.poster_path)
       .map(function(movie) {
-        var divCol = $("<div>").attr("class", "col-md-4 col-lg-4");
+        var divCol = $("<div>").attr(
+          "class",
+          "col-xs-12 col-sm-6 col-md-4 col-lg-4"
+        );
         // <conditional> ? ifTrue : ifFalse;
         var divThumbnail = $("<div>")
           .attr("class", "thumbnail")
@@ -77,11 +80,18 @@ $(document).ready(function() {
       "class",
       "clearfix visible-md-block visible-lg-block"
     );
+    const divVisibleSpaceSM = $("<div>").attr(
+      "class",
+      "clearfix  visible-sm-block"
+    );
     //put div in moives class div
     $(".movies").append(movieElement);
     //ever 3rd add a clearfix to MD or LG
     if (index && (index + 1) % 3 === 0) {
       $(".movies").append(divVisibleSpaceMDLG);
+    }
+    if (index && (index + 1) % 2 === 0) {
+      $(".movies").append(divVisibleSpaceSM);
     }
   };
 
