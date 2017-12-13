@@ -78,8 +78,10 @@ $(document).ready(function() {
 
 19. Ok. I think we've had it for the day.
 
-19) Now we've got our movies up, and showing thumbnail and title as a class caption. Rad. Looks good in md-col, but what about xsm, sm, and lg. So let's fix that!
+20. Add filter to our moviesList before mapping to remove any movie object that does not have a movie poster. grrrrr.
 
-20) Adding in release data and description, and a call to action button for details
+21. Now we've got our movies up, and showing thumbnail and title as a class caption. Rad. Looks good in md-col, but what about xsm, sm, and lg. So let's fix that!
 
-21) We added col for xs, sm, and lg. This includes clearfix for 2 col layout aka sm/xs.
+22. Adding in release data and description, and a call to action button for details
+
+23. We added col for xs, sm, and lg. This includes clearfix for 2 col layout aka sm/xs.

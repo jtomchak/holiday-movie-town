@@ -33,7 +33,7 @@ $(document).ready(function() {
     const moviePosters = moviesList
       .filter(x => x.poster_path)
       .map(function(movie) {
-        var divCol = $("<div>").attr("class", "col-md-4");
+        var divCol = $("<div>").attr("class", "col-md-4 col-lg-4");
         // <conditional> ? ifTrue : ifFalse;
         var divThumbnail = $("<div>")
           .attr("class", "thumbnail")
