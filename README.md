@@ -86,6 +86,37 @@ $(document).ready(function() {
 
 23. We added col for xs, sm, and lg. This includes clearfix for 2 col layout aka sm/xs.
 
+24. **Part B** We want to change out the herf tag for an actual button tag so we can have an onclick event to call getMovieDetails
+
+```js
+.append(
+                $("<button>")
+                  .attr("class", "btn btn-info btn-md")
+                  .attr("type", "button")
+                  .text("Details")
+                  .click(function() {
+                    console.log(movie.title);
+                    getMoviesDetails(movie.id); //<-------TO BE MADE
+                  })
+              )
+```
+
+23. **Part C?** Rad. Now we need to have a function to fetch the extended details of our movie that the user clicked on. It's going to be a lot like our getMoives function
+
+```js
+const getMoviesDetails = movieId => {
+  const movieDetailsURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=2434d246ec60c162a86db597467ef4ed`;
+  fetch(movieDetailsURL)
+    .then(res => res.json())
+    .then(payload => {
+      console.log(payload);
+      //Present Modal!!!!
+      presentMovieDetailsModal(payload); //<-----Need to make this guy next!
+    })
+    .catch(err => console.log(err));
+};
+```
+
 24. # Modals!! `npm install -D bootstrap-loader html-webpack-plugin resolve-url-loader url-loader` Gonna need some things first!
 
 25. Update our index with a modal class attr. See Index below
@@ -114,6 +145,23 @@ $(document).ready(function() {
         <!-- End of Modal Content -->
       </div>
     </div>
+```
+
+25. Now that we have the HTML to present the modal we need the actual code to invoke it, with the specific movie info that was returned from getMovieDetails function.
+    **Be sure to call `.modal()` on the modal element to get it to open properly**
+
+```js
+//Present Modal for Movie!!!
+const presentMovieDetailsModal = movie => {
+  $(".modal-title:first").text(movie.title);
+  $(".movieDetails-overview:first").text(movie.overview);
+  $(".movieDetails-img:first").attr(
+    "src",
+    "https://image.tmdb.org/t/p/w500/" + movie.poster_path
+  );
+  $(".movieDetails-tagline:first").text(movie.tagline);
+  $("#movieDetails-modal").modal();
+};
 ```
 
 26. Now that you have a modal working. Rad. Good job. We want to fetch the data for each poster individually. Below is the APIURL you'll need to get the details of a specific movie
