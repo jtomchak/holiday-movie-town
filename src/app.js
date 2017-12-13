@@ -31,9 +31,10 @@ $(document).ready(function() {
   const createPosters = () => {
     //get element from DOM to stick our movies in!
     const moviePosters = moviesList
+      .filter(x => x.poster_path)
       .map(function(movie) {
         var divCol = $("<div>").attr("class", "col-md-4");
-
+        // <conditional> ? ifTrue : ifFalse;
         var divThumbnail = $("<div>")
           .attr("class", "thumbnail")
           .append(
@@ -43,6 +44,26 @@ $(document).ready(function() {
                 "https://image.tmdb.org/t/p/w500/" + movie.poster_path
               )
               .attr("class", "poster_image")
+          )
+          .append(
+            $("<div>")
+              .attr("class", "caption")
+              .append($("<h2>").append(movie.title))
+              .append(
+                $("<p>", {
+                  class: "",
+                  text: movie.overview
+                }).attr("class", "hidden-xs hidden-sm")
+              )
+              .append(
+                $("<p>").append(
+                  $("<a>")
+                    .attr("href", "http://www.imdb.com/title/") //to be modaled
+                    .attr("class", "btn btn-primary")
+                    .attr("role", "button")
+                    .text("Details")
+                )
+              )
           );
         divCol.append(divThumbnail);
         return divCol;

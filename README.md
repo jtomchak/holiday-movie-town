@@ -77,3 +77,9 @@ $(document).ready(function() {
 18. Sweet!!! Images!!! but why are then off set ? :-( Here we want to leverage column resets [Bootstrap Docs](https://getbootstrap.com/docs/3.3/css/) by applying a column reset at responsive breakpoints, we get them to align correctly. Double Sweet.
 
 19. Ok. I think we've had it for the day.
+
+19) Now we've got our movies up, and showing thumbnail and title as a class caption. Rad. Looks good in md-col, but what about xsm, sm, and lg. So let's fix that!
+
+20) Adding in release data and description, and a call to action button for details
+
+21) We added col for xs, sm, and lg. This includes clearfix for 2 col layout aka sm/xs.
