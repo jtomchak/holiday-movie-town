@@ -7,12 +7,10 @@
 5. Create a blank HTML5 scaffald index.html in folder 'src' and app.js in folder 'src'
 6. Add a single script tag to your index.html
    `<script src="./app.js"></script>`
-7. Shut up and listen: also change your js file to
-   `<script src="./app.bundle.js"></script>`
+7. We are gonna need some packages to install!!!
 8. `npm install jquery bootstrap babel-core babel-loader babel-preset-es2015 sass-loader node-sass webpack css-loader style-loader file-loader webpack-dev-server -D`
-9. DownTOWN and Copy the webpack.config.js from slack or the repo into the root of our application. Pretty please.
-10. rename your script to app.bundle.js, pretty please!
-11. And your scripts in your package.json needs to have the following:
+9. Download and Copy the webpack.config.js from slack or the repo into the root of our application. Pretty please.
+10. And your scripts in your package.json needs to have the following:
 
 ```
  "scripts": {
@@ -30,7 +28,7 @@
 /dist
 ```
 
-12. in the terminal cmd -> `npm install bootstrap-sass`
+12. in the terminal cmd -> `npm install bootstrap-sass sass-loader`
 
 13. add a style.scss to your src folder with the following
 
